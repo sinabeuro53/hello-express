@@ -1,4 +1,9 @@
-FROM ubuntu:14.04
+FROM openjdk:8-jre
+
+COPY target/springjar-*.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
 MAINTAINER Jeonghwan<ej88ej@gamil.com>
 
 RUN apt-get update
